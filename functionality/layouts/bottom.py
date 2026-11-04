@@ -338,6 +338,9 @@ class BottomSection(QWidget):
   
   def shuffleButtonPressed(self, status):
     if status:
+      if not self.player.isPlaying():
+        return
+      
       currentSong = self.playlist[self.playerIndex]
 
       self.unshuffledPlaylist = copy(self.playlist)
